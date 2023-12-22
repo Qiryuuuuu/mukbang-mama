@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@font-face {
+    font-family: 'Nuku';
+    src: url(./font/nuku1.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #1a1a1a;  
+    background-image: url(../img/location.png); 
+    font-family: 'Roboto';
+}
+
+/*Navbar*/
+li, a, button{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+}
+
+.logo{
+    width: 65px;
+    height: 65px;
+}
+
+.logo:hover{
+    animation: rotate 1s ease-in-out;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    position: relative;
+    width: 100%;
+}
+
+.navlinks{
+    list-style: none;
+}
+
+.navlinks li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.l-active{
+    font-size: 20px;
+    font-weight: medium;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;   
+}
+
+.l-active:hover{
+    font-size: 18px; 
+    text-decoration: underline;
+}
+
+.navlinks li a{
+    color: white;
+    transition: all 0.3s ease 0s;    
+}
+
+.navlinks li a:hover{
+    font-size: 18px; 
+    background-color:rgb(129, 186, 125);
+    color: white;  
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+button, .ctn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(129, 186, 125);
+    padding: 13px 13px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+    font-size: 20px;       
+}
+
+.ctn:hover{
+    font-size: 18px;
+    background-color:#ffdb58;
+    color: #1a1a1a;
+}
+
+
+.mapping{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Map*/
+.map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapping{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mapping h1{
+    font-family: 'Roboto';
+    font-size: 5vmin;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin: 12px 0px;
+}
+
+.mapping h2{
+    font-family: 'Roboto';
+    font-size: 3vmin;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.line{
+    flex: 1;
+    width: 200px;
+    height: 1px;
+    background: #ececec;
+    margin: 12px auto;
+}
+
+.address{
+    background-color: #a10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    font-weight: lighter;
+    padding: 10px;
+    
+}
+
+.address h1, h2{
+    display: flex;
+    justify-content: center;
+}
+
+.loc{
+    color: white;
+    font-family: 'Roboto';
+}
+
+   /* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #383838;
+    border-radius: 20px;
+  
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffdb58;
+  }
+
+  
+.toggle-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
+  @media (max-width: 930px) {
+
+    body {
+      overflow: hidden; /* Hide the scrollbar */
+    }
+  
+    .navlinks {
+      /* Modify the navigation links styles for mobile */
+      display: none;
+    }
+  
+    .logo {
+      /* Modify the logo styles for mobile */
+      width: 40px;
+      height: 40px;
+    }
+
+      .navlinks {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: #a10000;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 2;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .map {
+        width: 100%;
+        height: 64vh;
+        overflow: hidden;
+    }
+    
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .address h1, h2{
+        text-align: center;
+        font-size: 3.5vmin;
+    }
+    
+    .address{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+  }

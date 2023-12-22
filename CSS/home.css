@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@font-face {
+    font-family: 'Nuku';
+    src: url(../font/nuku1.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+  background-color: #1a1a1a;  
+  font-family: 'Roboto';
+}
+
+/*Navbar*/
+li, a, button{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+}
+
+.logo{
+    width: 65px;
+    height: 65px;
+}
+
+.logo:hover{
+    animation: rotate 1s ease-in-out;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    position: absolute;
+    width: 100%;
+}
+
+.navlinks{
+    list-style: none;
+    align-items: center;
+}
+
+.navlinks li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.h-active{
+    font-size: 20px;
+    font-weight: medium;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;   
+}
+
+.h-active:hover{
+    font-size: 18px; 
+    text-decoration: underline;
+}
+
+.navlinks li a{
+    color: white;
+    transition: all 0.3s ease 0s;    
+}
+
+.navlinks li a:hover{
+    font-size: 18px; 
+    background-color:#80bc7c;
+    color: white;  
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+button, .ctn{
+    border: none;
+    border-radius: 5px;
+    background-color: #80bc7c;
+    padding: 13px 13px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+    font-size: 20px;   
+}
+
+.ctn:hover{
+    font-size: 18px;
+    background-color:#ffdb58;
+    color: #1a1a1a;
+}
+
+/*Home Section*/
+.land{
+    width: 100vw;
+    height: 100vh;
+    background-image:url(../img/headerbg.png);
+    background-position: bottom;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.landing-content {
+    position: absolute;
+    left: 80px;
+  }
+
+.landing-content h1{
+    font-family: 'Nuku';
+    font-size: 20vmin;
+    color: #ff0000;
+    transition: color 0.7s;
+    letter-spacing: 4px;
+}
+
+.landing-content h2{
+    font-family: "Roboto";
+    font-size: 5vmin;
+    font-weight: lighter;
+}
+
+.landing-content h3{
+    font-family: 'Roboto';
+    font-weight: lighter;
+    display: inline-block;
+    font-size: 2.8vmin;
+    width: 45vw;
+    margin-top: 10px;
+}
+
+.book{
+    position: absolute;
+    margin-top: 20px;
+}
+
+.fa-facebook{
+    border-radius: 50%;
+    font-size: 40px;
+    position: absolute;
+    bottom: 30px;
+    left: 75px;
+    cursor: pointer;
+    color: rgb(150, 150, 150);
+    transition: all 0.7s ease 0s;
+}
+
+.fa-facebook:hover{
+    box-shadow: 0 0 20px 10px rgba(82, 82, 82, 0.6);
+    color:rgb(223, 225, 226);
+}
+
+.toggle-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+/* Mobile Styles */
+@media (max-width: 1000px) {
+
+    body {
+      overflow: hidden; /* Hide the scrollbar */
+    }
+  
+    .navlinks {
+      /* Modify the navigation links styles for mobile */
+      display: none;
+    }
+  
+    .logo {
+      /* Modify the logo styles for mobile */
+      width: 40px;
+      height: 40px;
+    }
+  
+    .book {
+        /* Modify the button styles */
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #a10000;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+  
+    .land {
+      /* Remove absolute positioning from the .land div */
+      position: static;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Set the height to full viewport height */
+      overflow: hidden; /* Hide any overflowing content */
+      background-image:url(../img/header_m.png);
+    }
+  
+    .landing-content {
+      text-align: center;
+      max-width: 90vw; /* Limit the width of the content */
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .landing-content h1 {
+      /* Modify the heading styles for mobile */
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      font-size: 45px; /* Adjust the font size as needed */
+    }
+  
+    .landing-content h2 {
+      /* Modify the subheading styles for mobile */
+      font-size: 15px;
+      margin-bottom: 10px;
+      font-weight: medium;
+    }
+  
+    .landing-content h3 {
+      /* Modify the description styles for mobile */
+      font-size: 14px;
+      margin-top: 5px;
+      width: 90vw;
+      font-weight: lighter;
+    }
+  
+    .fa-facebook {
+      /* Modify the Facebook icon styles for mobile */
+      font-size: 30px;
+      bottom: 40px;
+      left: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .navlinks {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: #a10000;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: 2;
+    }
+
+    .toggle-btn {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+    }
+  
+}

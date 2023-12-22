@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@font-face {
+    font-family: 'Nuku';
+    src: url(./font/nuku1.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+  
+  background-image: url(../img/menubg.png);
+  background-color: #1a1a1a;
+  font-family: 'Roboto';
+ 
+}
+
+/*Navbar*/
+li, a, button{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+}
+
+.logo{
+    width: 65px;
+    height: 65px;
+}
+
+.logo:hover{
+    animation: rotate 1s ease-in-out;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5%;
+    width: 100%;
+}
+
+.navlinks{
+    list-style: none;
+}
+
+.navlinks li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.m-active{
+    font-size: 20px;
+    font-weight: medium;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;   
+}
+
+.m-active:hover{
+    font-size: 18px; 
+    text-decoration: underline;
+}
+
+.navlinks li a{
+    color: white;
+    transition: all 0.3s ease 0s;    
+}
+
+.navlinks li a:hover{
+    font-size: 18px; 
+    background-color:#80bc7c;
+    color: white;  
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+button, .ctn{
+    border: none;
+    border-radius: 5px;
+    background-color: #80bc7c;
+    padding: 13px 13px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s; 
+    font-size: 20px;   
+}
+
+.ctn:hover{
+    font-size: 18px;
+    background-color:#ffdb58;
+    color: #1a1a1a;
+}
+
+/*Menu Header*/
+.slides h1, h2{
+    color: white;
+    font-family: 'Roboto';
+    font-weight: lighter;
+    text-align: center;
+    margin: 12px 0px;
+}
+
+.slides h1{
+    font-size: 5vmin;
+}
+
+.line{
+    flex: 1;
+    width: 200px;
+    height: 1px;
+    background: #ececec;
+    margin: 12px auto;
+}
+
+.slides h2{
+    font-size: 3vmin;
+}
+
+
+/*Menu Slider*/
+.slides h1{
+    font-family: 'Roboto';
+    font-size: 5vmin;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin: 12px 0px;
+}
+
+.slides{
+    height: 100vh;
+    margin-bottom: 30px;
+  }
+  
+  .img-slider{
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    margin: auto;
+  }
+  
+  .img-slider .slide{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+
+  }
+  
+  .img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+  }
+  
+  .img-slider .slide img{
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .img-slider .navigation .btn{
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .img-slider .navigation .btn.active{
+    background: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+::-webkit-scrollbar-thumb {
+  background-color: #383838;
+  border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ffdb58;
+}
+
+.toggle-btn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+  
+
+@media (max-width: 1000px){
+  .img-slider{
+    width: 600px;
+    height: 375px;
+  
+  }
+
+  .img-slider .slide .info{
+    padding: 10px 25px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 35px;
+  }
+
+  .img-slider .slide .info p{
+    width: 70%;
+    font-size: 15px;
+  }
+
+  .img-slider .navigation{
+    bottom: 25px;
+  }
+
+  .img-slider .navigation .btn{
+    width: 10px;
+    height: 10px;
+    margin: 8px;
+  }
+
+  .navlinks {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #a10000;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+ .toggle-btn {
+    display: block;
+    }
+
+ .overlay {
+    display: none;
+}
+
+.logo {
+  /* Modify the logo styles for mobile */
+  width: 40px;
+  height: 40px;
+}
+}
+
+@media (max-width: 620px){
+  .img-slider{
+    width: 400px;
+    height: 250px;
+  }
+
+  .img-slider .slide .info{
+    padding: 10px 20px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 30px;
+  }
+
+  .img-slider .slide .info p{
+    width: 80%;
+    font-size: 13px;
+  }
+
+  .img-slider .navigation{
+    bottom: 15px;
+  }
+
+  .img-slider .navigation .btn{
+    width: 8px;
+    height: 8px;
+    margin: 6px;
+  }
+
+  .navlinks {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #a10000;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+  .toggle-btn {
+    display: block;
+}
+
+  .overlay {
+    display: none;
+}
+
+.logo {
+  /* Modify the logo styles for mobile */
+  width: 40px;
+  height: 40px;
+}
+}
+
+@media (max-width: 420px){
+  .img-slider{
+    width: 320px;
+    height: 200px;
+  }
+
+  .img-slider .slide .info{
+    padding: 5px 10px;
+  }
+
+  .img-slider .slide .info h2{
+    font-size: 25px;
+  }
+
+  .img-slider .slide .info p{
+    width: 90%;
+    font-size: 11px;
+  }
+
+  .img-slider .navigation{
+    bottom: 10px;
+  }
+
+.logo {
+  /* Modify the logo styles for mobile */
+  width: 40px;
+  height: 40px;
+}
+}
+      
+
+
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
