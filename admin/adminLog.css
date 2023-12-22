@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@font-face {
+    font-family: 'Nuku';
+    src: url(./font/nuku1.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto';
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content{
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    color: #28101e;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+
+.textfield{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: ease .20s;
+    margin-bottom: 15px;
+}
+
+.input-field:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.left{
+    height: 100%;
+    background: url(../img/login1.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+h1{
+    position: relative;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.group-input{
+    padding: 35px 40px;
+}
+
+.create{
+    width: 100%;
+    color: #fff;
+    background: #a10000;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: ease .20s;
+    font-size: 1.1rem;
+}
+
+.sbtn{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sign:last-child{
+    margin-left: 25px;
+}
+
+.btn-sign{
+    color: #28101e;
+    background: white;
+    border-color: #a10000;  
+    border-style: solid;
+    padding: 4px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: ease .20s;
+    margin-bottom: 30px;
+}
+
+.btn-sign:hover{
+    color: white;
+    background: #a10000;
+    border:none;
+    transform: scale(1.1);
+}
+
+.btn-sign:active{
+    opacity: 0.6;
+}
+
+.create:hover{
+    color: #28101e;
+    background: white;
+    transform: scale(1.1);
+}
+
+.create:active{
+    opacity: 0.6;
+}
+
+p{
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.log a {
+    text-decoration: underline;
+    color: #a10000;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  
+  .log a:hover {
+    text-decoration: none;
+  }
+  
+  .log a:active {
+    opacity: 0.6;
+  }
+
+.back{
+    color: #a10000;
+    background: #fff;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: ease .20s;
+    z-index: 1;
+}
+
+.back:hover{
+   background: #a10000;
+   color: #fff;
+   transform: scale(1.1);
+}
+
+#error-message {
+   margin: 10px 0px;
+   color: red;
+   text-align: center;
+   font-size: 0.9rem;
+  }
+
+
+
+@media(max-width: 992px){
+    .content{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .left{
+        height: 330px;
+        order: -1;
+    }
+
+    header{
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #validation {
+      padding: 10px;
+    }
+    
+    #validation p {
+      margin: 5px 0;
+    }
+  }

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body{
+    font-family: 'Roboto';
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content{
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    display: grid;
+    text-align: center;
+    color: #28101e;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.form-group{
+    padding: 3px 50px;
+}
+
+input{
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    transition: ease .20s;
+    margin-bottom: 15px;
+}
+
+.input-field:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn{
+    width: 80%;
+    color: #fff;
+    background: #a10000;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    transition: ease .20s;
+    font-size: 1.1rem;
+}
+
+.btn:hover{
+    color: #a10000;
+    background: white;
+    border:none;
+    transform: scale(1.1);
+}
+
+.error-message{
+    color: #a10000;
+}
